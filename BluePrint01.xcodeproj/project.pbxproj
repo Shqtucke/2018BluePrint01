@@ -14,6 +14,7 @@
 		DC13D84F20D2C79500BC8FBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC13D84E20D2C79500BC8FBC /* Assets.xcassets */; };
 		DC13D85220D2C79500BC8FBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC13D85020D2C79500BC8FBC /* LaunchScreen.storyboard */; };
 		DC13D85A20D2C82200BC8FBC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC13D85920D2C82100BC8FBC /* GoogleService-Info.plist */; };
+		DC13D85C20D2D08300BC8FBC /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC13D85B20D2D08300BC8FBC /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		DC13D85120D2C79500BC8FBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC13D85320D2C79500BC8FBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC13D85920D2C82100BC8FBC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DC13D85B20D2D08300BC8FBC /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		E9C40F4377D07A52F103ED47 /* Pods_BluePrint01.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BluePrint01.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -82,6 +84,7 @@
 			children = (
 				DC13D84720D2C79000BC8FBC /* AppDelegate.swift */,
 				DC13D84920D2C79000BC8FBC /* ViewController.swift */,
+				DC13D85B20D2D08300BC8FBC /* CollectionViewCell.swift */,
 				DC13D84B20D2C79000BC8FBC /* Main.storyboard */,
 				DC13D84E20D2C79500BC8FBC /* Assets.xcassets */,
 				DC13D85020D2C79500BC8FBC /* LaunchScreen.storyboard */,
@@ -240,6 +243,7 @@
 			files = (
 				DC13D84A20D2C79000BC8FBC /* ViewController.swift in Sources */,
 				DC13D84820D2C79000BC8FBC /* AppDelegate.swift in Sources */,
+				DC13D85C20D2D08300BC8FBC /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +391,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79M729PMA7;
 				INFOPLIST_FILE = BluePrint01/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Futucke.BluePrint01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -403,7 +410,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79M729PMA7;
 				INFOPLIST_FILE = BluePrint01/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Futucke.BluePrint01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -7,19 +7,48 @@
 //
 
 import UIKit
+import Firebase
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    @IBOutlet var collectionView: UICollectionView!
+    private var dataRef: CollectionReference!
+    
+    var imagesArray = [UIImage(named:"3aria1.jpg"), UIImage(named:"3ballys1.jpg"), UIImage(named:"3bellagio.jpg") ]
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        dataRef = Firestore.firestore().collection("casinos")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        dataRef.getDocuments { (snapshot, error) in
+            if let err = error {
+                debugPrint("Error fetching docs: \(error)")
+            } else {
+                //print(snapshot?.documents)
+                guard let snap = snapshot else { return }
+                for document in snap.documents {
+                    print(document.data())
+                }
+            }
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return imagesArray.count
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! CollectionViewCell
+        
+        cell.imageName.image = imagesArray[indexPath.row]
+        
+        
+        return cell 
+    }
 
 }
 
