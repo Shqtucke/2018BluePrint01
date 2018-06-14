@@ -14,7 +14,9 @@
 		DC13D84F20D2C79500BC8FBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC13D84E20D2C79500BC8FBC /* Assets.xcassets */; };
 		DC13D85220D2C79500BC8FBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC13D85020D2C79500BC8FBC /* LaunchScreen.storyboard */; };
 		DC13D85A20D2C82200BC8FBC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC13D85920D2C82100BC8FBC /* GoogleService-Info.plist */; };
-		DC13D85C20D2D08300BC8FBC /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC13D85B20D2D08300BC8FBC /* CollectionViewCell.swift */; };
+		DC1C88F520D30F0B00CEE8DE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C88F420D30F0B00CEE8DE /* Constants.swift */; };
+		DC1C88F720D3100A00CEE8DE /* Casino.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C88F620D3100A00CEE8DE /* Casino.swift */; };
+		DC1C88FB20D31CBC00CEE8DE /* CasinoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C88FA20D31CBC00CEE8DE /* CasinoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +30,9 @@
 		DC13D85120D2C79500BC8FBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC13D85320D2C79500BC8FBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC13D85920D2C82100BC8FBC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		DC13D85B20D2D08300BC8FBC /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		DC1C88F420D30F0B00CEE8DE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DC1C88F620D3100A00CEE8DE /* Casino.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Casino.swift; sourceTree = "<group>"; };
+		DC1C88FA20D31CBC00CEE8DE /* CasinoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoCell.swift; sourceTree = "<group>"; };
 		E9C40F4377D07A52F103ED47 /* Pods_BluePrint01.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BluePrint01.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -82,9 +86,11 @@
 		DC13D84620D2C79000BC8FBC /* BluePrint01 */ = {
 			isa = PBXGroup;
 			children = (
+				DC1C88F020D30EB700CEE8DE /* Utilities */,
+				DC1C88F120D30EC600CEE8DE /* Model */,
+				DC1C88F220D30ECE00CEE8DE /* View */,
+				DC1C88F320D30ED500CEE8DE /* Controller */,
 				DC13D84720D2C79000BC8FBC /* AppDelegate.swift */,
-				DC13D84920D2C79000BC8FBC /* ViewController.swift */,
-				DC13D85B20D2D08300BC8FBC /* CollectionViewCell.swift */,
 				DC13D84B20D2C79000BC8FBC /* Main.storyboard */,
 				DC13D84E20D2C79500BC8FBC /* Assets.xcassets */,
 				DC13D85020D2C79500BC8FBC /* LaunchScreen.storyboard */,
@@ -92,6 +98,38 @@
 				DC13D85920D2C82100BC8FBC /* GoogleService-Info.plist */,
 			);
 			path = BluePrint01;
+			sourceTree = "<group>";
+		};
+		DC1C88F020D30EB700CEE8DE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DC1C88F420D30F0B00CEE8DE /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		DC1C88F120D30EC600CEE8DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DC1C88F620D3100A00CEE8DE /* Casino.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DC1C88F220D30ECE00CEE8DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DC1C88FA20D31CBC00CEE8DE /* CasinoCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DC1C88F320D30ED500CEE8DE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DC13D84920D2C79000BC8FBC /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,9 +279,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC1C88FB20D31CBC00CEE8DE /* CasinoCell.swift in Sources */,
 				DC13D84A20D2C79000BC8FBC /* ViewController.swift in Sources */,
 				DC13D84820D2C79000BC8FBC /* AppDelegate.swift in Sources */,
-				DC13D85C20D2D08300BC8FBC /* CollectionViewCell.swift in Sources */,
+				DC1C88F720D3100A00CEE8DE /* Casino.swift in Sources */,
+				DC1C88F520D30F0B00CEE8DE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

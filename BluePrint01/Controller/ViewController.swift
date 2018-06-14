@@ -14,7 +14,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet var collectionView: UICollectionView!
     private var dataRef: CollectionReference!
     
-    var imagesArray = [UIImage(named:"3aria1.jpg"), UIImage(named:"3ballys1.jpg"), UIImage(named:"3bellagio.jpg") ]
+    private var casinos = [Casino]()
+    
+    
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,25 +32,44 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 //print(snapshot?.documents)
                 guard let snap = snapshot else { return }
                 for document in snap.documents {
-                    print(document.data())
+                    //print(document.data())
+                    let data = document.data()
+                    let location = data[LOCATION] as? String ?? "Anonymous"
+                    let phone = data[PHONE] as? Int ?? 0
+                    let ratings = data[RATING] as? String ?? "No rating"
+                    let documentId = document.documentID
+                    
+                    let newCasino = Casino(location: location, phone: phone, rating: ratings, documentId: documentId)
+                    self.casinos.append(newCasino)
                 }
+                self.collectionView.reloadData()
             }
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imagesArray.count
+        return casinos.count 
     }
     
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! CollectionViewCell
-        
-        cell.imageName.image = imagesArray[indexPath.row]
-        
-        
-        return cell 
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "casinoCell", for: indexPath) as? CasinoCell {
+            
+            cell.configureCell(casino: casinos[indexPath.row])
+            
+            return cell
+        } else {
+            return UICollectionViewCell()
+        }
     }
 
 }
+
+
+
+
+
+
+
+
 
