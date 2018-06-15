@@ -12,11 +12,12 @@ class Casino {
     
     private(set) var documentId: String!
     private(set) var location: String!
-    private(set) var phone: Int!
+    private(set) var phone: String!
     private(set) var rating: String!
     
     
-    init(documentId: String, location: String, phone: Int, rating: String) {
+    
+    init(documentId: String, location: String, phone: String, rating: String) {
         
         self.documentId = documentId
         self.location = location

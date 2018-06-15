@@ -11,3 +11,4 @@ import Foundation
 let LOCATION = "location"
 let PHONE = "phone"
 let RATING = "rating"
+

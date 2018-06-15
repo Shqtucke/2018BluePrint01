@@ -36,7 +36,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                     let data = document.data()
                     let documentId = document.documentID
                     let location = data[LOCATION] as? String ?? "Anonymous"
-                    let phone = data[PHONE] as? Int ?? 0
+                    let phone = data[PHONE] as? String ?? ""
                     let ratings = data[RATING] as? String ?? "No rating"
                     
                     
