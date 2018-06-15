@@ -25,11 +25,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        dataRef.getDocuments { (snapshot, error) in
+        
+        dataRef.addSnapshotListener { (snapshot, error) in
             if let err = error {
                 debugPrint("Error fetching docs: \(error)")
             } else {
                 //print(snapshot?.documents)
+                self.casinos.removeAll()
                 guard let snap = snapshot else { return }
                 for document in snap.documents {
                     //print(document.data())
@@ -45,7 +47,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 }
                 self.collectionView.reloadData()
             }
-        }
+        
+      }
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
