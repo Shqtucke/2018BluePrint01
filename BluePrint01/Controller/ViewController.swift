@@ -34,12 +34,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 for document in snap.documents {
                     //print(document.data())
                     let data = document.data()
+                    let documentId = document.documentID
                     let location = data[LOCATION] as? String ?? "Anonymous"
                     let phone = data[PHONE] as? Int ?? 0
                     let ratings = data[RATING] as? String ?? "No rating"
-                    let documentId = document.documentID
                     
-                    let newCasino = Casino(location: location, phone: phone, rating: ratings, documentId: documentId)
+                    
+                    let newCasino = Casino(documentId: documentId, location: location, phone: phone, rating: ratings)
                     self.casinos.append(newCasino)
                 }
                 self.collectionView.reloadData()

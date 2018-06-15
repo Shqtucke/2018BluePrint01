@@ -16,8 +16,8 @@ class CasinoCell: UICollectionViewCell {
     @IBOutlet var labelFour: UILabel!
     
     func configureCell(casino: Casino) {
-        LabelOne.text = casino.location
-        labelTwo.text = casino.documentId
+        LabelOne.text = casino.documentId
+        labelTwo.text = casino.location
         labelThree.text = casino.rating
         labelFour.text = String(casino.phone)
         

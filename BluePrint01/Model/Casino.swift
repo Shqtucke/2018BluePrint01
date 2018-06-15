@@ -10,16 +10,19 @@ import Foundation
 
 class Casino {
     
+    private(set) var documentId: String!
     private(set) var location: String!
     private(set) var phone: Int!
     private(set) var rating: String!
-    private(set) var documentId: String!
     
-    init(location: String, phone: Int, rating: String, documentId: String) {
+    
+    init(documentId: String, location: String, phone: Int, rating: String) {
+        
+        self.documentId = documentId
         self.location = location
         self.phone = phone
         self.rating = rating
-        self.documentId = documentId
+        
         
     }
     
